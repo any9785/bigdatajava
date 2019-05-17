@@ -5,65 +5,50 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class loginDAO {
-	Connection con;
-	PreparedStatement ps;
-	ResultSet rs;
-	String url;
-	String user;
-	String password;
-	boolean ok = false;
+   Connection con;
+   PreparedStatement ps;
+   ResultSet rs;
+   String url;
+   String user;
+   String password;
 
-	public void login(loginDTO dto) throws Exception {
-		
-		
-		Class.forName("com.mysql.jdbc.Driver");
-		
-		url = "jdbc:mysql://localhost:3306/pos";
-		user = "root";
-		password = "1234";
-		
-		Connection con = DriverManager.getConnection(url, user, password);
-		
-	}
-	public memberDTO select(String inputid, String inputpw)  {
-       memberDTO dto = null;
-		try {
-			int x = -1;
-			Class.forName("com.mysql.jdbc.Driver");
-			
-			url = "jdbc:mysql://localhost:3306/pos";
-			user = "root";
-			password = "1234";
-			
-			Connection con = DriverManager.getConnection(url, user, password);
-			String sql = "select * from member where id = ? pw = ?";
-			ps = con.prepareStatement(sql);
-			ps.setString(1, inputid);
-			ps.setString(2, inputpw);
-			rs = ps.executeQuery();
-			
-				 
-			if(rs.next()) {
-				x=1;
-				JOptionPane.showMessageDialog(null, "∑Œ±◊¿Œ øœ∑·");
-				
-			}else {
-			    x=-1;
-			    JOptionPane.showMessageDialog(null, "æ∆¿ÃµøÕ ∆–Ω∫øˆµÂ∏¶ »Æ¿Œ«ÿ¡÷ººø‰.");
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return dto;
-		
-		
-		
-	}
-	
- 
+   public MemberDTO1 login(String inputid, String inputpw) {
+      MemberDTO1 dto = null;
+      try {
+         Class.forName("com.mysql.jdbc.Driver");
+
+         url = "jdbc:mysql://localhost:3306/pos";
+         user = "root";
+         password = "1234";
+
+         Connection con = DriverManager.getConnection(url, user, password);
+         
+         String sql = "select * from tb_member where id = ?";
+         ps = con.prepareStatement(sql);
+         ps.setString(1, inputid);
+         rs= ps.executeQuery();
+         if(rs.next()){
+            dto = new MemberDTO1();
+            String id = rs.getString(1);
+            String pw = rs.getString(2);
+            if(id.equals(inputid) && pw.equals(inputpw)) {
+               JOptionPane.showMessageDialog(null, "Î°úÍ∑∏Ïù∏ÏÑ±Í≥µ");
+               
+            }else {
+               JOptionPane.showMessageDialog(null, "ÏïÑÏù¥Îîî ÎòêÎäî ÎπÑÎ∞ÄÎ≤àÌò∏Î•º ÌôïÏù∏ÌïòÏÑ∏Ïöî");    
+            }
+            
+         }
+
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+      return dto;
+   }
+
 }
 

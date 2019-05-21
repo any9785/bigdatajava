@@ -28,9 +28,9 @@ public class Menu extends JFrame implements MouseListener {
       jtf3 = new JTextField(8);
       jtf4 = new JTextField(8);
 
-      jb1 = new JButton("ÀÔ·Â");
-      jb2 = new JButton("»èÁ¦");
-      jb3 = new JButton("¼öÁ¤");
+      jb1 = new JButton("ìž…ë ¥");
+      jb2 = new JButton("ì‚­ì œ");
+      jb3 = new JButton("ìˆ˜ì •");
 
       jp1.add(jb1);
       jp1.add(jb2);
@@ -49,7 +49,7 @@ public class Menu extends JFrame implements MouseListener {
 
       add(new JScrollPane(jt), "Center");
 
-      // ½ÇÇà¹öÆ°ÀÇ ¿¢¼Ç ¸®½ºÅÍ µî·Ï
+      // ï¿½ï¿½ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
       jb1.addActionListener(new inputAction());
       jb2.addActionListener(new deleteAction());
       jb3.addActionListener(new renewAction());

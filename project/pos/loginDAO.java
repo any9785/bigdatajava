@@ -36,6 +36,7 @@ public class loginDAO {
             String id = rs.getString(1);
             String pw = rs.getString(2);
             if(id.equals(inputid) && pw.equals(inputpw)) {
+            	Main main = new Main();
                JOptionPane.showMessageDialog(null, "로그인성공");
                
             }else {

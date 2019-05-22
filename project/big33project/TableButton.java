@@ -175,7 +175,7 @@ public class TableButton extends JFrame implements ActionListener{
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection(url, user, password);
-				String sql = "select name from tabledb where tn =? && count > '0'";
+				String sql = "select name from foodOrder where tn =? && count > '0'";
 				PreparedStatement pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, dto.getTn());
 				ResultSet rs = pstmt.executeQuery();
@@ -206,53 +206,53 @@ public class TableButton extends JFrame implements ActionListener{
 			}
  
 }
-for (int i = 0; i < count.length; i++) {
-ArrayList listCount = new ArrayList();
-ArrayList listPrice = new ArrayList();
-String url = "jdbc:mysql://localhost:3306/car";
-String user = "root";
-String password = "1234";
-Connection con = null;
-try {
-Class.forName("com.mysql.jdbc.Driver");
-con = DriverManager.getConnection(url, user, password);
-String sql = "select count, price from tabledb where tn =? && count > '0'";
-PreparedStatement pstmt = con.prepareStatement(sql);
-pstmt.setString(1, dto.getTn());
-ResultSet rs = pstmt.executeQuery();
+		for (int i = 0; i < count.length; i++) {
+			ArrayList listCount = new ArrayList();
+			ArrayList listPrice = new ArrayList();
+			String url = "jdbc:mysql://localhost:3306/car";
+			String user = "root";
+			String password = "1234";
+			Connection con = null;
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				con = DriverManager.getConnection(url, user, password);
+				String sql = "select count, price from foodOrder where tn =? && count > '0'";
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, dto.getTn());
+				ResultSet rs = pstmt.executeQuery();
  
  
 
 
-while (rs.next()) {
-dto.setCount(rs.getString(1));
-dto.setPrice(rs.getString(2));
-listCount.add(dto.getCount());
-listPrice.add(dto.getPrice());
-}
+				while (rs.next()) {
+					dto.setCount(rs.getString(1));
+					dto.setPrice(rs.getString(2));
+					listCount.add(dto.getCount());
+					listPrice.add(dto.getPrice());
+				}
  
-} catch (ClassNotFoundException e) {
-e.printStackTrace();
-} catch (SQLException e) {
-e.printStackTrace();
-}
-try {
-con.close();
-} catch (SQLException e) {
-e.printStackTrace();
-}
-for (int j = 0; j < count.length; j++) {
-if (j < listCount.size()) {
-String sCount = String.valueOf(listCount.get(j));
-String sPrice = String.valueOf(listPrice.get(j));
-count[j].setText(sCount);
-int inCount = Integer.parseInt(sCount);
-int inPrice = Integer.parseInt(sPrice);
-price[j].setText((inCount * inPrice) + "");
-} else {
-count[j].setText("");
-price[j].setText("");
-}
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			for (int j = 0; j < count.length; j++) {
+				if (j < listCount.size()) {
+					String sCount = String.valueOf(listCount.get(j));
+					String sPrice = String.valueOf(listPrice.get(j));
+					count[j].setText(sCount);
+					int inCount = Integer.parseInt(sCount);
+					int inPrice = Integer.parseInt(sPrice);
+					price[j].setText((inCount * inPrice) + "");
+				} else {
+					count[j].setText("");
+					price[j].setText("");
+				}
  
 
 

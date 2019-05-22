@@ -116,7 +116,7 @@ Connection con = null;
 try {
 Class.forName("com.mysql.jdbc.Driver");
 con = DriverManager.getConnection(url, user, password);
-String sql = "select name from tabledb where tn =? && count > '0'";
+String sql = "select name from foodOrder where tn =? && count > '0'";
 PreparedStatement pstmt = con.prepareStatement(sql);
 pstmt.setString(1, dto.getTn());
 ResultSet rs = pstmt.executeQuery();
@@ -159,7 +159,7 @@ Connection con = null;
 try {
 Class.forName("com.mysql.jdbc.Driver");
 con = DriverManager.getConnection(url, user, password);
-String sql = "select count, price from tabledb where tn =? && count > '0'";
+String sql = "select count, price from foodOrder where tn =? && count > '0'";
 PreparedStatement pstmt = con.prepareStatement(sql);
  
 

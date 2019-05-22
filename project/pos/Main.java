@@ -24,6 +24,7 @@ import javax.swing.JMenuBar;
 import javax.swing.ImageIcon;
 
 public class Main {
+	private JTextField tf01;
    
    
 
@@ -55,8 +56,25 @@ public class Main {
       b1.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
         	 Order o = new Order();
-         }
+        	 OrderDTO dto = new OrderDTO();
+        	 OrderDAO dao = new OrderDAO();
+        	 
+        	 
+        	 
+        	 //try {
+        		 //String num = tf01.getText();
+        		 //String sql = "Select * from foodlist";
+        		 //con = Connect.DbConnection();
+        		// pst = con.prepareStatement(sql);
+        		// rs = pst.executeQuery();
+        		 //if(rs.next()) {
+        			//tf01.setText(rs.getString("number").trim());
+        		// }
+        	// }
+        		 
+        	 } 
       });
+   
       b1.setFont(new Font("±¼¸²", Font.BOLD, 15));
       b1.setVerticalAlignment(SwingConstants.TOP);
       b1.setBounds(12, 140, 191, 148);
@@ -203,6 +221,11 @@ public class Main {
       });
       button_17.setBounds(681, 664, 116, 61);
       p.add(button_17);
+      
+      tf01 = new JTextField();
+      tf01.setBounds(156, 10, 168, 130);
+      p.add(tf01);
+      tf01.setColumns(10);
       
       Vector me = new Vector();
       me.addElement("¹øÈ£.");

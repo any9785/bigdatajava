@@ -34,7 +34,7 @@ public class Order extends JFrame {
 	JScrollPane jsp = null;
 	JPanel jp1, jp2, jp3;
 	JTextField tf = new JTextField(30);
-	JTable table;
+	private JTable table;
 	Connection con = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
@@ -74,7 +74,7 @@ public class Order extends JFrame {
       setTitle("메뉴 주문창");
       	tf.setSize(480, 80);
 		tf.setLocation(30, 650);
-		add(tf);
+		getContentPane().add(tf);
       
       setSize(1000, 800);
       getContentPane().setLayout(null);
@@ -111,26 +111,42 @@ public class Order extends JFrame {
       JButton b3 = new JButton("주문");
       b3.addActionListener(new ActionListener() {
       	public void actionPerformed(ActionEvent e) {
-      		//Main m = new Main();
-      		JButton b3 = (JButton)e.getSource();
-			int rowCount = table.getRowCount();
-			int sum =0;
-			for(int i=0; i<rowCount; i++) {
-				sum += (int)table.getValueAt(i, 3);
+      			//주문버튼클릭시 메인화면의 테이블안에 데이터값이 들어감
+      		
+      		OrderDTO dto = new OrderDTO();
+      		OrderDAO dao = new OrderDAO();
+      		int row = table.getRowCount();
+      		for (int i = 0; i < row; i++) {
+      			dto.setNum((String)table.getValueAt(i, 0));
+      			dto.setMenu((String)table.getValueAt(i, 1));
+      			dto.setAmount((String)table.getValueAt(i, 2));
+      			dto.setPrice((String)table.getValueAt(i, 3));
+      			dao.insert(dto);
 			}
-			tf.setText(String.valueOf(" 총 금액 : "+sum));
+      		dispose();
       	}
+			
       });
       b3.setBounds(759, 654, 97, 73);
       getContentPane().add(b3);
       
       JButton b4 = new JButton("결제");
+      b4.addActionListener(new ActionListener() {
+      	public void actionPerformed(ActionEvent e) {
+      		int row = table.getRowCount();
+			int sum =0;
+			for(int i=0;i<row;i++) {
+				sum += Integer.parseInt((String)table.getValueAt(i, 3));
+			}
+			tf.setText(String.valueOf(" 총 금액 : "+sum + "원"));
+      		
+      	}
+      });
       b4.setBounds(868, 654, 97, 73);
       getContentPane().add(b4);
       JButton[] buttonList = null;
       int rowCount = 0;
       int i = 0, x=538,y=-37,width=122,height=95, cnt=0;
-      Vector row = new Vector();
       try {
             conn();
             pstmt = con.prepareStatement("select * from foodlist");
@@ -141,47 +157,43 @@ public class Order extends JFrame {
             buttonList = new JButton[rowCount];
             rs.beforeFirst();//처음상태로 이동되는거 
             while (rs.next()) {
-            	//model.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)});
-            	buttonList[i] = new JButton(rs.getString(2)); //버튼에 글자붙여넣음
-            	//buttonList[i].setName(rs.getString(1));
-            	row.addElement(rs.getString(1));
-            	row.addElement(rs.getString(2));
-            	row.addElement(rs.getString(3));
-            	row.addElement(rs.getString(4));
-            	
-            	
-            	x += width+10;
-            	if(cnt%3 ==0) {
-            		x = 558;
-            		y += height + 20;
-            	}
-            	buttonList[i].setBounds(x, y, width, height);
-            	getContentPane().add(buttonList[i]);
-            	cnt++;
-            	i++;
+                buttonList[i] = new JButton(rs.getString(2));
+                buttonList[i].setName(rs.getString(1)+"|"+rs.getString(2)+"|"+rs.getString(3)+"|"+rs.getString(4));
+                x += width+10;
+                if(cnt%3 ==0) {
+                   x = 538;
+                   y += height + 10;
+                }
+                buttonList[i].addActionListener(new ActionListener() {
+                   public void actionPerformed(ActionEvent e) {
+                      String[] temp = ((JButton)e.getSource()).getName().split("\\|");//스플릿은 문자를 나누는거 
+                      model.addRow(new Object[] {temp[0],temp[1],temp[2],temp[3]});
+                   }
+                });
+                
+                
+                buttonList[i].setBounds(x, y, width, height);
+                getContentPane().add(buttonList[i]);
+                cnt++;
+                i++;
+                
+             }
+             
+            } catch (SQLException e) {
+             e.printStackTrace();
             }
-            
-           } catch (SQLException e) {
-            e.printStackTrace();
-           }
-           finally{
-            disconn();
-           }
+            finally{
+             disconn();
+            }
       
-      for (int j = 0; j < buttonList.length; j++) {
-         buttonList[j].addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-               JButton buttonList =(JButton)e.getSource();
-               DefaultTableModel m = (DefaultTableModel)table.getModel();
-               //model.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)});
-            m.addRow(row);
-            }
-         });
-      }
       setVisible(true);
       
    }   
-   public static void main(String[] args) {
+   protected void DISPOSE_ON_CLOSE() {
+	// TODO Auto-generated method stub
+	
+}
+public static void main(String[] args) {
       new Order();
    }
 }

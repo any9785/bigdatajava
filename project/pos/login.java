@@ -1,60 +1,81 @@
 package pos;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JPasswordField;
+import java.awt.event.*;
+import javax.swing.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 
-public class login {
-   private static JTextField t;
-   private JPasswordField t1;
 
-   public login() {
-      JFrame f = new JFrame("로그인");
-      f.setSize(400, 300);
-      f.getContentPane().setLayout(null);
+public class login extends JFrame{
+   JTextField jtf2;
+   private JPasswordField pf;
+   JButton jb1, jb2;
+   JPanel jp1, jp2;
+   JLabel jl1, jl2;
+   
+   
+   login(){
+      setTitle("로그인창");
       
-      JLabel lblNewLabel = new JLabel("ID");
-      lblNewLabel.setFont(new Font("굴림", Font.PLAIN, 32));
-      lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-      lblNewLabel.setBounds(38, 69, 57, 47);
-      f.getContentPane().add(lblNewLabel);
+      jp1 = new JPanel();
+      jp2 = new JPanel();
       
-      JLabel lblPw = new JLabel("Pw");
-      lblPw.setHorizontalAlignment(SwingConstants.CENTER);
-      lblPw.setFont(new Font("굴림", Font.PLAIN, 32));
-      lblPw.setBounds(38, 126, 57, 47);
-      f.getContentPane().add(lblPw);
       
-      t = new JTextField();
-      t.setBounds(114, 69, 191, 41);
-      f.getContentPane().add(t);
-      t.setColumns(10);
+      jl1 = new JLabel("ID");
+      jl1.setBounds(44, 42, 26, 27);
+      jl2 = new JLabel("PW");
+      jl2.setBounds(44, 79, 26, 27);
       
-      JButton btnNewButton = new JButton("\uB85C\uADF8\uC778");
-      btnNewButton.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent arg0) {
-            String inputid = t.getText();
-            String inputpw = t1.getText();
+      jb1 = new JButton("회원가입");
+      jb1.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            
+            MemberProc mp = new MemberProc();
+         }
+      });
+      jb2 = new JButton("로그인");
+      jb2.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            String inputid = jtf2.getText();
+            String inputpw = pf.getText();
             loginDAO dao = new loginDAO();
             MemberDTO1 dto = dao.login(inputid,inputpw);
          }
       });
+      jp1.setLayout(null);
       
-      btnNewButton.setFont(new Font("굴림", Font.PLAIN, 32));
-      btnNewButton.setBounds(134, 192, 137, 32);
-      f.getContentPane().add(btnNewButton);
+      jp1.add(jl1);
+      jp1.add(jl2);
+      jtf2 = new JTextField(10);
+      jtf2.setBounds(82, 42, 171, 21);
+      jp1.add(jtf2);
       
-      t1 = new JPasswordField();
-      t1.setBounds(114, 126, 191, 41);
-      f.getContentPane().add(t1);
-      f.setVisible(true);
-
+      jp2.add(jb1);
+      jp2.add(jb2);
+      
+      getContentPane().add(jp1, BorderLayout.CENTER);
+      
+      pf = new JPasswordField();
+      pf.setBounds(82, 82, 171, 21);
+      jp1.add(pf);
+      getContentPane().add(jp2, "South");
+      
+      
+      
+      
+      
+      
+      
+      setSize(300, 200);
+      
+      setVisible(true);
    }
+   
+   
+   public static void main(String args[]) {
+      new login();   
+      }
+
+
 }

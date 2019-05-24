@@ -227,7 +227,6 @@ public class MemberProc extends JFrame implements ActionListener {
        
         setSize(350,500);
         setVisible(true);
-        //setDefaultCloseOperation(EXIT_ON_CLOSE); //System.exit(0) //프로그램종료
         setDefaultCloseOperation(DISPOSE_ON_CLOSE); //dispose(); //현재창만 닫는다.
        
        
@@ -269,10 +268,10 @@ public class MemberProc extends JFrame implements ActionListener {
             }else{
                 JOptionPane.showMessageDialog(this, "삭제를 취소하였습니다.");
             }
+            mList.jTableRefresh();
+            //jTable내용 갱신 메소드 호출
         }
        
-        //jTable내용 갱신 메소드 호출
-        mList.jTableRefresh();
        
     }//actionPerformed 
    
@@ -352,7 +351,6 @@ public class MemberProc extends JFrame implements ActionListener {
         String birth1 = tfYear.getText();
         String birth2 = tfMonth.getText();
         String birth3 = tfDate.getText();
-        //String birth = birth1+"/"+birth2+"/"+birth3;
         String birth = birth1+birth2+birth3;
         String job = (String)cbJob.getSelectedItem();
         String gender = "";

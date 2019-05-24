@@ -41,7 +41,7 @@ public class Member_List extends JFrame implements MouseListener,ActionListener{
        
         setSize(600,200);
         setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//end »ý¼ºÀÚ
    
    

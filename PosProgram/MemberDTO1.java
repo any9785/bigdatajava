@@ -12,10 +12,6 @@ public class MemberDTO1 {
 	    private String gender;
 	    private String email;
 	    private String intro;
-	 
-	    //이클립스팁 : Getter/Setter 만들기
-	    //             우클릭 -> source->Generate Getters And Setters-> [Select AlL] -> [OK]
-	   
 	   
 	    public String getId() {
 	        return id;

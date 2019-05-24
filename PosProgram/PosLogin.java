@@ -13,10 +13,6 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
-
-import pos.MemberDTO1;
-import pos.loginDAO;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -37,43 +33,21 @@ public class PosLogin extends JFrame {
 	private URL imageURL;
 	private final JPanel panel2 = new JPanel();
 	private final JTextField tfid = new JTextField();
-	private final JButton button = new JButton("\uD68C\uC6D0\uAC00\uC785");
+	private final JButton bt_member = new JButton("\uD68C\uC6D0\uAC00\uC785");
 
 	public PosLogin(){
 		super("POS");
 		tfid.setBounds(245, 51, 240, 44);
 		tfid.setColumns(10);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("chickenicon.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("")));
 		getContentPane().setBackground(Color.LIGHT_GRAY);
-		try {
-		    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-		        if ("Nimbus".equals(info.getName())) {
-		            UIManager.setLookAndFeel(info.getClassName());
-		            break;
-		        }
-		    }
-		} catch (Exception e) {
-		}
 		
 		login_bt();//로그인 창
 		ok_exit_bt();//확인,종료
 		num_bt();//숫자버튼
 		background();//배경
 	}
-	public void wrong_dialog(String str){
-		JLabel label = new JLabel(str);
-		label.setFont(new Font("휴먼옛체", Font.PLAIN , 15));
-		JOptionPane.showMessageDialog(null,label,"비밀번호 오류",JOptionPane.PLAIN_MESSAGE);
-		tfid.setText("");
-		tfpwd.setText("");
-	}
-	public void correct_dialog(String str){
-		JLabel label = new JLabel(str);
-		label.setFont(new Font("휴먼옛체", Font.PLAIN, 15));
-		JOptionPane.showMessageDialog(null,label,"로그인 성공",JOptionPane.PLAIN_MESSAGE);
-	}
 	public void login_bt(){
-
 		getContentPane().setFont(new Font("굴림", Font.PLAIN, 12));
 		setTitle("POS \uB85C\uADF8\uC778");
 		getContentPane().setLayout(null);
@@ -90,36 +64,32 @@ public class PosLogin extends JFrame {
 		bt_ok.addActionListener(new ActionListener() {
 
 public void actionPerformed(ActionEvent e) { //로그인 버튼
-				//@SuppressWarnings("deprecation")
-				String inputid = tfid.getText();
-				String inputpwd = tfpwd.getText();
-				LoginDAO dao = new LoginDAO();
-				PosProgram.MemberDTO1 dto = dao.login(inputid,inputpwd);
-				
-				if(!inputpwd.equals(tfpwd.getText())){
-					wrong_dialog("비밀번호를 다시 입력하세요.");
-					str="";
-				}
-				else{//성공
-					correct_dialog("로그인 성공! 반갑습니다.");	
-					if(ps==null){//객체가 생성되기 전 로그인시
-						try {
-							LoginDAO dao1 = new LoginDAO();
-							ps = new PosMain(PosLogin.this);
-							tfpwd.setText("");
-							str="";
-						} catch (IOException e1) {
-						}
-					}
-					else{//객체 생성되어서 로그인시
-						ps.setVisible(true);
-						tfpwd.setText("");
-						str="";
-					}
-					setVisible(false);
-				}
-			}
-		});
+	 String id = tfid.getText();
+     String pw = tfpwd.getText();
+
+     MemberDAO1 dao = new MemberDAO1();
+     MemberDTO1 dto = dao.getMemberDTO(id);
+
+     if (id.equals(dto.getId()) && pw.equals(dto.getPwd())) {
+           JOptionPane.showMessageDialog(null, "로그인 성공");
+           try {
+			ps = new PosMain(PosLogin.this);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+           dispose();
+     } else if (id.equals("") || pw.equals("")) {
+        JOptionPane.showMessageDialog(null, "아이디 또는 비밀번호를 입력해주세요.");
+     } else {
+        JOptionPane.showMessageDialog(null, "아이디 또는 비밀번호가 틀렸습니다.");
+        tfid.setText("");
+        tfpwd.setText("");
+     }
+  }
+});
+
+
 		bt_exit.setIcon(null);
 		bt_exit.setBounds(355, 227, 96, 66);
 		panel2.add(bt_exit);
@@ -135,9 +105,10 @@ public void actionPerformed(ActionEvent e) { //로그인 버튼
 				if(result==JOptionPane.OK_OPTION){
 					System.exit(0);
 				}
+				
 			}
 		});
-	}
+}
 	public void num_bt(){
 	}
 	public void focus(){
@@ -189,18 +160,19 @@ public void actionPerformed(ActionEvent e) { //로그인 버튼
 								tfpwd.setBackground(Color.WHITE);
 								
 								panel2.add(tfid);
-								button.addActionListener(new ActionListener() {
+								bt_member.addActionListener(new ActionListener() {
 									public void actionPerformed(ActionEvent e) {
 										MemberProc mp = new MemberProc();
 									}
 								});
-								button.setForeground(Color.BLACK);
-								button.setFont(new Font("Dialog", Font.BOLD, 17));
-								button.setFocusable(false);
-								button.setBackground(new Color(250, 235, 215));
-								button.setBounds(94, 227, 103, 66);
+								bt_member.setForeground(Color.BLACK);
+								bt_member.setFont(new Font("Dialog", Font.BOLD, 17));
+								bt_member.setFocusable(false);
+								bt_member.setBackground(new Color(250, 235, 215));
+								bt_member.setBounds(94, 227, 103, 66);
+								setSize(350,500);
 								
-								panel2.add(button);
+								panel2.add(bt_member);
 		setSize(670,540);
 		Dimension dimen = Toolkit.getDefaultToolkit().getScreenSize(); //화면 사이즈를 넣어줌		 
 		Dimension dimen1 = getSize(); //프레임 사이즈 입력
@@ -213,85 +185,3 @@ public void actionPerformed(ActionEvent e) { //로그인 버튼
 		focus();
 	}
 }
-
-
-//import java.awt.event.*;
-//import java.io.IOException;
-//
-//import javax.swing.*;
-//import java.awt.*;
-//import javax.swing.*;
-//import java.awt.event.*;
-//
-//
-//public class PosLogin extends JFrame{
-//   JTextField jtf2;
-//   private JPasswordField pf;
-//   JButton jb1, jb2;
-//   JPanel jp1, jp2;
-//   JLabel jl1, jl2;
-//   private PosMain ps;
-//   
-//   PosLogin(){
-//      setTitle("로그인창");
-//      
-//      jp1 = new JPanel();
-//      jp2 = new JPanel();
-//      
-//      
-//      jl1 = new JLabel("ID");
-//      jl1.setBounds(44, 42, 26, 27);
-//      jl2 = new JLabel("PW");
-//      jl2.setBounds(44, 79, 26, 27);
-//      
-//      jb1 = new JButton("회원가입");
-//      jb1.addActionListener(new ActionListener() {
-//         public void actionPerformed(ActionEvent e) {
-//            MemberProc mp = new MemberProc();
-//         }
-//      });
-//      jb2 = new JButton("로그인");
-//      jb2.addActionListener(new ActionListener() {
-//         public void actionPerformed(ActionEvent e) {
-//            String inputid = jtf2.getText();
-//			String inputpw = pf.getText();
-//            LoginDAO dao = new LoginDAO();
-//            MemberDTO1 dto = dao.login(inputid,inputpw);
-//            //ps = new PosMain();
-//					//try {
-//						//ps = new PosMain(PosLogin.this);
-//					//} catch (IOException e1) {
-//					//}
-//				//setVisible(false);
-//			}
-//      });
-//      jp1.setLayout(null);
-//      
-//      jp1.add(jl1);
-//	   jp1.add(jl2);
-//	   jtf2 = new JTextField(10);
-//      jtf2.setBounds(82, 42, 171, 21);
-//      jp1.add(jtf2);
-//      
-//      jp2.add(jb1);
-//      jp2.add(jb2);
-//     
-//      getContentPane().add(jp1, BorderLayout.CENTER);
-//      
-//      pf = new JPasswordField();
-//      pf.setBounds(82, 82, 171, 21);
-//      jp1.add(pf);
-//      getContentPane().add(jp2, "South");
-//      
-//      setSize(300, 200);
-//      
-//      setVisible(true);
-//   }
-//   
-//   
-//   public static void main(String args[]) {
-//      new PosLogin();   
-//      }
-//
-//
-//}

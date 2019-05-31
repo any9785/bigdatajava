@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function a(){
+		var data = document.querySelector("#content");
+		var data2 = data.value;
+		location.href ="jstest.jsp?content="+data2;
+	}
+</script>
+</head>
+<body>
+	<h1>게시판</h1>
+	글내용 : <input type="text"name="content"id="content"><br>
+	<button type="button" onClick="a()">전송</button>
+</body>
+</html>

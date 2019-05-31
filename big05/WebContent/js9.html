@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check(){
+		//alert("내가 호출됨.")
+		//var data = document.getElementByID("#id");
+		var data = document.querySelector("input"); //id라는 노드
+		var data2 = data.value //입력값 추출
+		if(data2.length >= 5){
+			location.href = "js.jsp?id="+data2;
+			//alert("5글자 이상에 적합한 id입니다.")
+		}else{
+			alert("5글자 이하입니다.다시 입력해주세요.")
+			location.href="js9.html"
+		}
+	}
+</script>
+</head>
+<body>
+<h1>회원가입</h1>
+아이디 : <input type="text" name="id" id="id"><br>
+<button type="button" onclick="check()">회원가입</button>
+</body>
+</html>

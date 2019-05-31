@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function call(){
+		alert("나는 call함수")
+	}
+	function call2(){
+		alert("나는 call2함수")
+	}
+	function call3(msg){
+		alert("내가 전달받은 메세지는 " + msg);
+	}
+	function call4(subject, price){
+		alert(subject + "과목의 가격은 " + price);
+	}
+/* 	call();
+	call2(); */
+/* 	input = prompt("메세지를 입력하세요.")
+	call3(input); */
+	input1 = prompt("과목명 입력");
+	input2 = parseInt(prompt("과목가격 입력"));
+	call4(input1, input2);
+	
+</script>
+</style>
+</head>
+<body>
+
+</body>
+</html>

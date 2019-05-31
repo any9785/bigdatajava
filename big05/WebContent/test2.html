@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 입력값 커피총가격, 인원수 -> 인원당 얼마를 낼지 출력 */
+	function call(total, count){
+		var price = total/count;
+		return price;
+	}
+	function call2(rep){
+		if(rep >= 3000){
+			alert("당신이 지불할 금액은 " + (rep - 300));
+		}
+	}
+	var rePrice = call(10000, 3);
+	call2(rePrice);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

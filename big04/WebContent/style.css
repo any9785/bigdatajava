@@ -1,0 +1,121 @@
+@charset "UTF-8";
+#total{
+	color: blue;
+	background-image: url(001.png);
+	width: 800px;
+	height: 1500px;
+	font-size: 20px;
+}
+
+#top{
+	width: 800px;
+	padding-left: 120px;
+	height: 55px;
+	background: lime;
+}
+
+#top li{
+	list-style: none;	
+	float: left;
+	width: 120px;
+	height: 50px;
+	padding-left: 25px;
+	padding-top: 7px;
+}
+
+#top li:nth-child(2n+1) {
+	background: red;
+	box-shadow: 10px 10px gray;
+}
+
+#top li:nth-child(2n) {
+	background: orange;
+	box-shadow: 10px 10px gray;
+}
+
+#top li:first-child {
+	border-radius: 20px 0 0 20px;
+}
+#top li:last-child {
+	border-radius: 0 20px 20px 0;
+}
+a{
+	text-decoration: overline;
+	font-family: 굴림;
+	font-size: 20px;
+	color: yellow;
+	font-weight: bold;
+}
+a:hover{
+	text-decoration: none;
+	font-family: 궁서;
+	font-size: 25px;
+	color: white;
+	font-weight: bold;
+}
+#content{
+	padding-top: 20px;
+	background: yellow;
+	width: 800px;
+	height: 300px;
+}
+
+tr{
+	width: 300px;
+}
+.t1{
+	width: 100px;
+	text-align: center;	
+}
+.t1:hover{
+	background: lime;
+	font-weight: bold;
+}
+.t2{
+	width: 200px;
+}
+.t3{
+	text-align: center;
+}
+input[type="submit"]{
+	background: gold;
+	font-family: 궁서;
+	font-size: 30px;
+	font-weight: bold;	
+}
+
+}
+input[type="submit"]:hover{
+	color: yellow;
+	background: green;
+	font-family: 궁서;
+	font-size: 30px;
+	font-weight: bold;	
+}
+
+input[type="text"]{
+	background: lime;
+	font-size: 30px;
+	color: blue;
+	font-weight: bold;
+	font-family: 궁서;
+}
+
+#top2{
+	top: 50px;
+	right: 5px;
+	position: fixed;
+	width: 200px;
+	height: 120px;
+	background: black;
+	font: 궁서;
+	font-size: 10px;
+	font-weight: bold;
+	color: yellow;
+	border-top: 5px solid aqua;
+	border-bottom: 10px double white;
+	border-radius: 100px 10px;
+	box-shadow: 10px 10px gray;
+}
+
+

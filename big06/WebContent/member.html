@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+   <body>
+      <!--a, action은 클라이언트의 요청: 주소부분에 남는다.  -->
+      <!-- <a href="member.jsp">단순한 링크 연결</a> -->
+      <h1>회원가입 화면입니다.</h1>
+      <hr color="red">
+      <form action="member.jsp">
+         ID: <input type="text" name="id"><br>
+         PW: <input type="text" name="pw"><br>
+         NAME: <input type="text" name="name"><br>
+         TEL: <input type="text" name="tel"><br>
+         HOBBY:
+         	<input type = "checkbox" name="hobby" value="등산">등산
+         	<input type = "checkbox" name="hobby" value="수영">수영
+         	<input type = "checkbox" name="hobby" value="축구">축구
+         	<input type = "checkbox" name="hobby" value="볼링">볼링
+          
+         <input type="submit" value="서버로 전송">
+      </form>
+
+</body>
+</html>

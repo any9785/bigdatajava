@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <head>
+         <meta charset="UTF-8">
+         <title>Insert title here</title>
+      </head>
+   <body>
+      <h1>회원가입 화면입니다.</h1>
+      <hr color="red">
+      <form action="navermember.jsp">
+         ID: <input type="text" name="id"><br>
+         PW: <input type="text" name="pw"><br>
+         NAME: <input type="text" name="name"><br>
+         TEL: <input type="text" name="tel"><br>
+         BIRTH: <input type="text" name="birth" placeholder="년(4자)">
+               <select name="month">
+               <option>월</option>
+            <option value="01">1</option>
+            <option value="02">2</option>
+            <option value="03">3</option>
+            <option value="04">4</option>
+            <option value="05">5</option>
+            <option value="06">6</option>
+            <option value="07">7</option>
+            <option value="08">8</option>
+            <option value="09">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+               </select>   
+            <input type="text" name="day" placeholder="일"><br>
+         GENDER: <select name="gender">
+               <option value="" selected>성별</option>
+               <option value="남자">남자</option>
+               <option value="여자">여자</option>
+               </select><br>
+         EMAIL: <input type="text" name="email"><br>
+         
+          
+         <input type="submit" value="서버로 전송">
+      
+      
+      </form>
+   </body>

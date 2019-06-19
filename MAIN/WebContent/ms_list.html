@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Hi! Trip</title>
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="resources/css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/content.css" />
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/swiper.js"></script>
+    <script src="resources/js/common.js"></script>
+    <script src="resources/js/global.js"></script>
+    <script src="resources/js/contentSub.js"></script>
+    <script src="resources/js/tagchoiceview.js"></script>
+    <script src="resources/js/paging.js"></script>
+    <script src="resources/js/listcommon.js"></script>
+    <script src="resources/js/sigunguCode.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    
+<script type="text/javascript">
+
+if( appYn == 'N') {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-92880258-1', 'auto');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview');
+} else {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-92878657-1', 'auto');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview');
+}		
+</script>
+
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+ <script type="text/javascript"> 
+if(!wcs_add) var wcs_add = {}; 
+wcs_add["wa"] = "e145ca1b39e890"; 
+wcs_do(); 
+</script>
+<link id="avast_os_ext_custom_font" href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet" type="text/css">
+<style type = "text/css"> /* 0619추가(52~56줄) */
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style>
+</style>
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW76JCN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+Kakao.init('44732c3ca5b90a4f1f49c6b38df023d1');
+</script>
+
+	<div id="skipToContent">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#btnMenu">메뉴 바로가기</a>
+	</div>
+
+
+<header class="header">
+</header>
+
+<!-- contents -->
+<div id="contents">
+
+    <div class="tit_cont">
+        <div class="area_tag">
+            <span class="name1"><span class="ico">All</span>여행지</span>
+        </div>
+		<h2 class="tag">
+		</h2>
+		<a href="javascript:" class="btn_represch">새로고침</a>
+    </div>
+
+    <div class="wrap_contView clfix">
+
+        <!-- 썸네일 리스트 -->
+        <div class="box_leftType1">
+            <div class="total_check">
+                <strong>총<span></span>건</strong>
+                <div class="btn_txt">
+                    <button type="button" class="on" id="1">최신순</button>
+                    <button type="button" id="2">거리순</button>
+                    <button type="button" id="3">인기순</button>
+                </div>
+                <button type="button" class="btn_mPop">상세조회</button>
+            </div>
+            <ul class="list_thumType flnon">
+            	<li class="bdr_nor">
+            		<div class="photo">
+            			<a href="javascript:" onclick="goDetail("443caffd-74a6-4713-ba02-4b5520ef7e62");">
+            			<img src="resources/pictures/seoul/숭례문.jpg" alt="숭례문">
+            			</a>
+            		</div>
+            	<div class="area_txt">
+            		<div class="tit">
+            			<a href="javascript:" onclick="goDetail("443caffd-74a6-4713-ba02-4b5520ef7e62");">숭례문</a>
+            		</div>
+            		<p>서울 중구</p>
+            		<p>042-481-4650</p>
+            	</div>
+            </li>
+            
+            <li class="bdr_nor">
+            	<div class="photo">
+            		<a href="javascript:">
+            		<img src="resources/pictures/seoul/경복궁.jpg" alt="경복궁">
+            		</a>
+            	</div>
+            <div class="area_txt">
+            		<div class="tit">
+            			<a href="javascript:">경복궁</a>
+            		</div>
+            		<p>서울 종로구</p>
+            		<p>02-3700-3900</p>
+            	</div>
+            </li>
+            	
+            
+            
+            <!-- paging -->
+            <div class="page_box">
+            </div>
+            <!-- //paging -->
+        </div>
+        <!-- //썸네일 리스트 -->
+
+        <div class="box_rightType1">
+            <div class="tit_mPop">
+                <h2>태그선택</h2>
+                <button class="btn_close">닫기</button>
+            </div>
+            
+            <!-- 태그 리스트 -->
+            <div class="area_tagList">
+                 <!-- <ul class="tag_list js_multi" id="monthlist">
+                    <li id="01"><button type="button" class="btn"><span>#1월</span></button></li>
+                    <li id="02"><button type="button" class="btn"><span>#2월</span></button></li>
+                    <li id="03"><button type="button" class="btn"><span>#3월</span></button></li>
+                    <li id="04"><button type="button" class="btn"><span>#4월</span></button></li>
+                    <li id="05"><button type="button" class="btn"><span>#5월</span></button></li>
+                    <li id="06"><button type="button" class="btn"><span>#6월</span></button></li>
+                    <li id="07"><button type="button" class="btn"><span>#7월</span></button></li>
+                    <li id="08"><button type="button" class="btn"><span>#8월</span></button></li>
+                    <li id="09"><button type="button" class="btn"><span>#9월</span></button></li>
+                    <li id="10"><button type="button" class="btn"><span>#10월</span></button></li>
+                    <li id="11"><button type="button" class="btn"><span>#11월</span></button></li>
+                    <li id="12"><button type="button" class="btn"><span>#12월</span></button></li>
+                    <li id="0"><button type="button" class=""><span>#전체</span></button></li>
+                </ul> -->
+                <ul class="tag_list js_multi" id="monthlist">
+                    <li id="01"><button type="button" class="btn"><span>#봄</span></button></li>
+                    <li id="02"><button type="button" class="btn"><span>#여름</span></button></li>
+                    <li id="03"><button type="button" class="btn"><span>#가을</span></button></li>
+                    <li id="04"><button type="button" class="btn"><span>#겨울</span></button></li>
+                    <li id="0"><button type="button" class=""><span>#전체</span></button></li>
+                </ul>
+                
+                <ul class="tag_list area_list js_one" id="arealist">
+                    <li id="All"><button type="button" class="btn_all_active"><span>#전체</span></button></li>
+                    <li id="1"><button type="button" class="btn"><span>#서울</span></button></li>
+                    <li id="6"><button type="button" class="btn"><span>#부산</span></button></li>
+                    <li id="4"><button type="button" class="btn"><span>#대구</span></button></li>
+                    <li id="2"><button type="button" class="btn"><span>#인천</span></button></li>
+                    <li id="5"><button type="button" class="btn"><span>#광주</span></button></li>
+                    <li id="3"><button type="button" class="btn"><span>#대전</span></button></li>
+                    <li id="7"><button type="button" class="btn"><span>#울산</span></button></li>
+                    <li id="8"><button type="button" class="btn"><span>#세종</span></button></li>
+                    <li id="31"><button type="button" class="btn"><span>#경기</span></button></li>
+                    <li id="32"><button type="button" class="btn"><span>#강원</span></button></li>
+                    <li id="33"><button type="button" class="btn"><span>#충북</span></button></li>
+                    <li id="34"><button type="button" class="btn"><span>#충남</span></button></li>
+                    <li id="35"><button type="button" class="btn"><span>#경북</span></button></li>
+                    <li id="36"><button type="button" class="btn"><span>#경남</span></button></li>
+                    <li id="37"><button type="button" class="btn"><span>#전북</span></button></li>
+                    <li id="38"><button type="button" class="btn"><span>#전남</span></button></li>
+                    <li id="39"><button type="button" class="btn"><span>#제주</span></button></li>
+                </ul>
+                <ul class="tag_list area_view_list js_multi" id="sigungulist">
+                </ul>
+                <ul class="tag_list cnt_list js_multi" id="taglist">
+                </ul>
+
+            </div>
+            <!-- //태그 리스트 -->
+
+            <div class="banner_right mt20" style="display:none;"></div>
+        </div>
+
+    </div>
+
+</div>
+<!-- //contents -->
+
+<!-- 공지사항 , 유관기관, footer-->
+<div id="footer">
+</div>
+<!-- //공지사항 , 유관기관, footer-->
+
+
+<script type="text/javascript">
+
+	var choiceTag = getParameter('choiceTag');
+	var choiceTagId = getParameter('choiceTagId');
+	if( choiceTag == '' || choiceTag == undefined ) choiceTag = '전체';
+	if( choiceTagId == '' || choiceTagId == undefined ) choiceTagId = 'All';
+
+	var areacode = getParameter('areacode');
+	var sigungucode = 'All';
+	if( areacode == '' || areacode == undefined) {
+		areacode = 'All';
+	} 
+
+	if( areacode == 'All') {
+		$(".tit_cont h2").text('#'+choiceTag);		
+	}
+
+	if( choiceTag == '전체') choiceTag = 'All';
+	
+	var tourkind = getParameter('showcase');
+	var compid = getParameter('compid');
+	var showcase = '';
+	if( tourkind == '' || tourkind == undefined) {
+		showcase = '';
+	} else {
+		showcase = tourkind;
+		$(".tit_cont h2").text('#'+showcase);
+	
+	}
+	if( compid == '' || compid == undefined) {
+		compid = '';
+	} 
+	
+	var smonth = 'All';
+	var sareaCode = areacode;
+	var ssigunguCode = sigungucode;
+	var stagName = choiceTag;
+	var stagId = choiceTagId;
+	var spage = 1;
+	var scnt = 10;
+	var totcnt = 0;
+	var tagListViewYN = 'N';
+	var areaListViewYN = 'N';
+	var sigunguObj;
+	var ssortkind = 1;
+	var scompid = compid;
+	
+	$(document).ready(function () {
+	    //헤더,풋터 페이지 로드
+	    $(".header").load("/common/header.do?v=20181227001");
+	    $("#footer").load("/common/footerNoGa.do?v=20190426001");
+
+		if( tagListViewYN == 'N' ) {
+			getMainTag('Tour','list');	//kind : Main(메인), Recom(추천), Course코스), Tour(명소), Festival(축제)
+		}
+		if( areaListViewYN == 'N' ) {
+			getSigungu();
+		}
+
+	    getLocation();
+	});
+
+   
+    
+    function showPosition(x, y) {
+        locationx = x;
+        locationy = y;
+        
+//    	if( showcase == '' ) {
+    		checkForHash();		
+//    	} else {
+//    		getListShowcase(scompid);
+//    	}
+
+    }
+	
+    function showPositionNot(x, y) {
+        locationx = x;
+        locationy = y;
+        
+//    	if( showcase == '' ) {
+	   		checkForHash();		
+//    	} else {
+//    		getListShowcase(scompid);
+//    	}
+    }
+
+	function checkForHash() {		
+
+		if(window.location.hash)
+		{
+		//hash 가 있다면 ^ 를 구분자로 하나씩 string을 추출하여 각각 페이지정보를 가져옵니다.
+			var str_hash = window.location.hash;
+			str_hash = str_hash.replace("#","");
+			arr_param=str_hash.split("^");
+			
+			sareaCode = arr_param[1];			
+			ssigunguCode = arr_param[2];	
+			stagId = arr_param[3];				
+			spage = arr_param[4];
+			scompid = arr_param[6];
+			ssortkind = arr_param[7];
+			stagtxt = arr_param[8];
+			
+			$(".btn_txt button").each(function( index ) {
+				$(this).removeClass("on");
+				if( $(this).attr('id') == ssortkind ) {
+					$(this).addClass("on");
+				}
+			});
+			
+			$(".tit_cont h2").text(decodeURIComponent(stagtxt));
+
+		} 
+
+		if( scompid == '' ) {
+			getContentList();			
+		} else {
+			getListShowcase(scompid);
+		}
+
+
+	}	
+
+	//명소 목록 가져오기
+	function getContentList() {
+
+		var pdata =
+        {
+			cmd : 'TOUR_CONTENT_LIST_VIEW',
+			month : smonth+'',
+			areaCode : sareaCode+'',
+			sigunguCode : ssigunguCode+'',
+			tagId : stagId.replace(/#/gi,""),
+			sortkind : ssortkind+'',
+			locationx : locationx+'',
+			locationy : locationy+'',
+			page : spage+'',
+			cnt : scnt+''
+        }
+    	var obj_st=JSON.stringify(pdata);
+
+		
+		$.ajax({
+			url: mainurl+'/call',
+			dataType: 'json',
+			type: "POST",
+			data: obj_st,
+			success: function(data) {
+				goContentListView(data,'list');
+			},
+			complete: function() {
+				Paging(spage, totcnt, scnt, pagingSize);
+			},
+			error: function(xhr, textStatus, errorThrown) {
+			}
+		});
+	}
+
+	
+	//명소목록 보여주기
+	function goContentListView(data,kind) {
+		
+		var strHtml = "";
+		
+		uid = data.header.id;
+		setLogintype(uid);
+		
+		totcnt = data.body.totalCount;
+		
+		$('.total_check span').html(numberWithCommas(totcnt));
+
+		if( totcnt == 0 ) {
+			$('.list_thumType li').remove();
+		}
+
+		if( totcnt != 0 ) {
+			$.each(data.body.result, function (index, items) {
+	
+				var imgalt = items.imgAlt;
+				if( imgalt == null || imgalt == '' || imgalt == 'null' ) imgalt = items.title;
+				var telno = items.telNo;
+				if( telno != undefined && telno != 'undefined' && telno != null && telno != '' && telno != 'null') {
+					telno = telno.replace(/[^0-9-,]/g,'');
+				}
+
+				if( telno == null || telno == '' || telno == 'null' ) telno = '';
+				
+				var dist = setDist(items.distance);
+				if( dist > 10000 || dist == 'd' ) {
+					dist = '';
+				} else {
+					dist = '내 위치에서 ' + dist + 'km - ';
+				}
+				var thumb = '&thumb';
+				
+	            strHtml += '<li class="bdr_nor">';
+	            strHtml += '<div class="photo"><a href="javascript:" onclick=\'goDetail("'+items.cotId+'");\'><img src="'+mainimgurl+items.imgPath+thumb+'" alt="'+imgalt+'"></a></div>';
+	            strHtml += '<div class="area_txt">';
+	            strHtml += '    <div class="tit">';
+	            strHtml += '        <a href="javascript:" onclick=\'goDetail("'+items.cotId+'");\'>'+items.title+'</a>';
+	            strHtml += '    </div>';
+	            
+	            var fareaname = getAreaName(items.areaCode);
+	            var fsigunguname = getSigunguName(items.areaCode, items.sigunguCode);
+
+				strHtml += '    <p>'+dist+fareaname+' '+fsigunguname+'</p>';				
+
+				strHtml += '    <p>'+telno+'</p>';
+	            strHtml += '    <p class="tag">';
+	            
+	            var tagname ;
+	
+	            if( items.tagName != null ) {
+	               	tagname = items.tagName.split("|");
+	                for (var i in tagname) {  
+	                	strHtml += '<span>'+'#'+tagname[i]+'</span>'; 
+	                }  
+	            }
+	
+	            strHtml += '	</p>';
+	            strHtml += '</div>';
+	            strHtml += '<button type="button" title="열기" class="btn_view">더보기</button>';
+	            strHtml += '<div class="pop_subMenu">';
+	           	strHtml += '    <ul>';
+	       		strHtml += '        <li class="btn_far"><a href="javascript:" onclick=\'setFavoContent("'+items.cotId+'")\'>즐겨찾기</a></li>';
+	   			strHtml += '        <li class="btn_share"><a href="javascript:" onclick=\'getShareInfo("'+encodeURIComponent(items.title)+'","'+items.imgPath+'","'+items.cotId+'",12);\'>공유하기</a></li>';
+	   			strHtml += '        <li class="btn_cart"><a href="javascript:" onclick=\'myCourseList("C","12","'+items.cotId+'","")\'>코스에 담기</a></li>';
+				strHtml += '    </ul>';
+				strHtml += '</div>';
+	            strHtml += '</li>';
+	            
+			});
+	
+	        $('.list_thumType').html(strHtml);
+	
+			$('.list_thumType li .photo a').each(function(index2, items2) {
+				$(this).children('img').error(function() {  
+					$(this).attr('src','/resources/images/common/no_img_01.png');
+				});
+			});
+		}
+		
+		window.scrollTo(0,0);
+	};
+	
+
+	//이달의 명소, 요즘많이찾는 명소...등 가져오기
+	function getListShowcase( rcompid ) {
+		
+		var endpoint = '';
+/*		
+		if( tourkind == 'thismonth') {
+			$(".tit_cont h2").text('#이달의 명소');
+			$(this).addClass('blueBox');
+		} else if( tourkind == 'famoustour') {
+			$(".tit_cont h2").text('#요즘많이찾는명소');
+			$(this).addClass('blueBox');
+		} else {
+			$(".tit_cont h2").text('#소셜버즈');
+			$(this).addClass('blueBox');
+		}
+*/
+		$.ajax({
+			url: mainurl+'/call',
+			dataType: 'json',
+			type: "POST",
+			data: {	
+				cmd : 'TOUR_SHOWCASE_VIEW',
+				//kind : tourkind,
+				locationx : locationx,
+				locationy : locationy,
+				page : spage,
+				cnt : scnt,
+				compid : rcompid
+			},
+			success: function(data) {
+				goContentListView(data,'case');
+			},
+			complete: function() {
+				Paging2(rcompid,spage, totcnt, scnt, pagingSize);
+				
+				if( tagListViewYN == 'N' ) {
+					getMainTag('Tour','list');	//kind : Main(메인), Recom(추천), Course코스), Tour(명소), Festival(축제)
+				}
+				if( areaListViewYN == 'N' ) {
+					getSigungu();
+				}
+			},
+			error: function(xhr, textStatus, errorThrown) {
+			}
+		});
+	}
+	
+	
+	//이달의 명소, 요즘많이찾는 명소...
+	$(".tag_menu li").click(function (e) {
+
+		var kind = $(this).attr('id');
+		
+		selectMonthRemove();
+		selectAreaRemove();
+		selectSigunguRemove();
+		selectTagRemove();
+		selectListTopRemove();
+
+		$(this).addClass('blueTxt');
+
+		getListShowcase( kind );
+		
+	});
+	
+	//홍보배너
+	getMarketing('Tour');
+
+	//
+	function goMarketingView(data,kind) {
+
+		var strHtml = "";
+		
+		var submainkind = "Tour";
+		var isAble = '';
+		
+		if( data.body.result != undefined ) {
+			$.each(data.body.result, function (index, items) {
+				
+				if( index == 0 ) isAble = items.isAble;
+				
+				strHtml += '<a href="javascript:" onclick="goSubMainMarketingSave(\''+submainkind+'\',\''+items.linkUrl+'\',\''+items.title+'\',\''+items.cotId+'\',\''+items.contentType+'\');"><img src="'+mainimgurl+items.imgId+'" alt="'+items.title+'"></a>';
+				
+				if( index == 0) return false;
+			});
+			
+			$('.banner_right').html(strHtml);
+			
+			if( isAble == 1 ) {
+				$('.banner_right').show();
+			}
+		}
+	}
+
+	
+	function goDetail(rcotid) {
+		
+		window.location.hash = "#" +$(document).scrollTop() +'^' + sareaCode+'^'+ssigunguCode+'^'+stagId.replace(/#/gi,"")+'^'+spage+'^'+scnt+'^'+scompid+'^'+ssortkind+'^'+$(".tit_cont h2").text();
+
+		location.href = '/detail/ms_detail.do?cotid='+rcotid;
+	}
+
+</script>
+
+</body>
+</html>

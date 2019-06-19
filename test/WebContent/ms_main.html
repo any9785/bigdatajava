@@ -1,0 +1,843 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>즐거운 여행 HT와 함께</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="여행자에게 꼭 필요한 정보와 기능만 담았습니다">
+<meta property="og:description" content="주기적으로 업데이트 된 정확한 관광지 정보를 쉽고 편리하게 확인해 보세요!">
+<meta property="og:image" content="https://korean.visitkorea.or.kr/resources/images/etc/OG_ms.png">
+<meta property="og:url" content="https://korean.visitkorea.or.kr/main/ms_main.do">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="resources/css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/content.css" />
+    <script src="resources/js/jquery-1.11.2.min.js"></script>
+    <script src="resources/js/swiper.js"></script>
+    <script src="resources/js/common.js"></script>
+    <script src="resources/js/global.js"></script>
+    <script src="resources/js/sigunguCode.js"></script>
+    
+<script type="text/javascript">
+if( appYn == 'N') {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-92880258-1', 'auto');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview');
+} else {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-92878657-1', 'auto');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview');
+}		
+</script>
+
+
+
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+ <script type="text/javascript"> 
+if(!wcs_add) var wcs_add = {}; 
+wcs_add["wa"] = "e145ca1b39e890"; 
+wcs_do(); 
+</script>   
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW76JCN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+	<div id="skipToContent">
+		<a href="#contents">본문 바로가기</a>
+		<a href="#btnMenu">메뉴 바로가기</a>
+	</div>
+
+<!-- header -->
+<header class="header">
+</header>
+<!-- //header -->
+
+<!-- contents -->
+<div id="contents">
+
+    <div class="tit_cont tit_ms"><!-- 각 타이틀 변경 클래스 tit_ms 명소 -->
+        <div class="tit_pos">
+            <h2><span class="ico">All</span>여행지</h2>
+			<div class="box_search2">
+				<input type="text" placeholder="검색" title="검색" class="inp_titSearch" id="submainInp" onkeyup="subEnterkey();">
+				<button type="button" class="btn_search" id="submainSearch">검색</button>
+			</div>
+        </div>
+        <div class="area_tagTop">
+        	<div class="inr">
+            	<ul class="clfix" id="taglist">
+            	</ul>
+            </div>	
+            <button type="button" class="btn_more">더보기</button>
+        </div>
+    </div>
+
+    <div class="wrap_contView padB10">
+        <h3>지역</h3>
+        <div class="area_msListPc m_none">
+            <ul class="clfix">
+                <li id="1"><a href="ms_list.html">서울</a></li>
+                <li id="2"><a href="">인천</a></li>
+                <li id="3"><a href="">대전</a></li>
+                <li id="4"><a href="">대구</a></li>
+                <li id="5"><a href="">광주</a></li>
+                <li id="6"><a href="">부산</a></li>
+                <li id="7"><a href="">울산</a></li>
+                <li id="8"><a href="">세종</a></li>
+                <li id="31"><a href="">경기</a></li>
+            </ul>
+            <ul class="clfix">
+                <li id="32"><a href="">강원</a></li>
+                <li id="33"><a href="">충북</a></li>
+                <li id="34"><a href="">충남</a></li>
+                <li id="35"><a href="">경북</a></li>
+                <li id="36"><a href="">경남</a></li>
+                <li id="37"><a href="">전북</a></li>
+                <li id="38"><a href="">전남</a></li>
+                <li id="39"><a href="">제주</a></li>
+                <li id="All"><a href="">전체보기</a></li>
+            </ul>
+        </div>
+    </div>
+
+	<div id="contentAppend">
+	<div class="wrap_contView section_line">
+	<h3 class="tit_atc">
+	봄(3~5월) 인기 여행지
+	</h3>
+	<span class="date">봄에 갈만한 여행지를 추천해드립니다!</span>
+	<div class="listBn_msPc m_none" id="msmain0">
+	<ul class="clfix">
+		<li>
+			<img src="resources/pictures/seoul/가로수길.jpg" alt="가로수길">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="class">
+				<div class="cell">
+					<strong class="tit_photo">가로수길</strong>	
+				</div>	
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src="resources/pictures/seoul/광화문.jpg" alt="광화문">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="class">
+				<div class="cell">
+					<strong class="tit_photo">광화문</strong>	
+				</div>	
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src="resources/pictures/seoul/광화문광장.jpg" alt="광화문광장">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="class">
+				<div class="cell">
+					<strong class="tit_photo">광화문광장</strong>	
+				</div>	
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src="resources/pictures/seoul/남산타워.jpg" alt="남산타워">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="class">
+				<div class="cell">
+					<strong class="tit_photo">남산타워</strong>
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src="resources/pictures/seoul/덕수궁.jpg" alt="덕수궁">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="class">
+				<div class="cell">
+					<strong class="tit_photo">덕수궁</strong>	
+				</div>	
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src="resources/pictures/seoul/롯데월드.jpg" alt="롯데월드">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="class">
+				<div class="cell">
+					<strong class="tit_photo">롯데월드</strong>	
+				</div>	
+			</div>
+		</div>
+		</a>
+		</li>
+		</ul>
+		
+		<div class="wrap_contView section_line">
+		<h3 class = "tit_atc">
+		여름(6~8월) 인기 여행지
+		</h3>
+		<span class="date">여름에 갈만한 여행지를 추천해드립니다!</span>
+		<div class="listBn_msPc m_none" id="msmain1">
+		<ul class="clfix">
+		<li>
+			<img src= "resources/pictures/seoul/63빌딩.jpg" alt="63빌딩">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="table">
+				<div class="cell">
+					<strong class="tit_photo">63빌딩</strong>		
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/남대문시장.jpg" alt="남대문시장">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="table">
+				<div class="cell">
+					<strong class="tit_photo">남대문시장</strong>		
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/동대문시장.jpg" alt="동대문시장">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="table">
+				<div class="cell">
+					<strong class="tit_photo">동대문시장</strong>		
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/롯데월드타워.jpg" alt="롯데월드타워">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="table">
+				<div class="cell">
+					<strong class="tit_photo">롯데월드타워</strong>		
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/여의도한강공원.jpg" alt="여의도한강공원">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="table">
+				<div class="cell">
+					<strong class="tit_photo">여의도한강공원</strong>		
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/올림픽공원.jpg" alt="올림픽공원">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="table">
+				<div class="cell">
+					<strong class="tit_photo">올림픽공원</strong>		
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		</ul>
+		
+		<div class="wrap_contView section_line">
+		<h3 class = "tit_atc">
+		가을(9~11월) 인기 여행지
+		</h3>
+		<span class="date">가을에 갈만한 여행지를 추천해드립니다!</span>
+		<div class="listBn_msPc m_none" id="msmain2">
+		<ul class="clfix">
+		
+		<li>
+			<img src= "resources/pictures/seoul/국립민속박물관.jpg" alt="국립민속박물관">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="table">
+				<div class="cell">
+					<strong class="tit_photo">국립민속박물관</strong>		
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/국립중앙박물관.jpg" alt="국립중앙박물관">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="table">
+				<div class="cell">
+					<strong class="tit_photo">국립중앙박물관</strong>		
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/봉은사.jpg" alt="봉은사">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+			<div class="table">
+				<div class="cell">
+					<strong class="tit_photo">봉은사</strong>		
+				</div>
+			</div>
+		</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/숭례문.jpg" alt="숭례문">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+				<div class="table">
+					<div class="cell">
+						<strong class="tit_photo">숭례문</strong>		
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/청계천.jpg" alt="청계천">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+				<div class="table">
+					<div class="cell">
+						<strong class="tit_photo">청계천</strong>		
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/북촌한옥마을.jpg" alt="북촌한옥마을">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+				<div class="table">
+					<div class="cell">
+						<strong class="tit_photo">북촌한옥마을</strong>		
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		</ul>
+		
+		<div class="wrap_contView section_line">
+		<h3 class = "tit_atc">
+		겨울(12~2월) 인기 여행지
+		</h3>
+		<span class="date">겨울에 갈만한 여행지를 추천해드립니다!</span>
+		<div class="listBn_msPc m_none" id="msmain3">
+		<ul class="clfix">
+		<li>
+			<img src= "resources/pictures/seoul/전쟁기념관.jpg" alt="전쟁기념관">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+				<div class="table">
+					<div class="cell">
+						<strong class="tit_photo">전쟁기념관</strong>		
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/종묘.jpg" alt="종묘">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+				<div class="table">
+					<div class="cell">
+						<strong class="tit_photo">종묘</strong>		
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/창경궁.jpg" alt="창경궁">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+				<div class="table">
+					<div class="cell">
+						<strong class="tit_photo">창경궁</strong>		
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/창덕궁.jpg" alt="창덕궁">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+				<div class="table">
+					<div class="cell">
+						<strong class="tit_photo">창덕궁</strong>		
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/이화벽화마을.jpg" alt="이화벽화마을">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+				<div class="table">
+					<div class="cell">
+						<strong class="tit_photo">이화벽화마을</strong>		
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		
+		<li>
+			<img src= "resources/pictures/seoul/광장시장.jpg" alt="광장시장">
+			<a href="" class="area_dimTxt">
+			<div class="table_wrap">
+				<div class="table">
+					<div class="cell">
+						<strong class="tit_photo">광장시장</strong>		
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		</ul>
+		</div>
+	</div>
+		
+		
+		
+	
+	
+
+<!-- //contents -->
+<!-- 공지사항 , 유관기관, footer-->
+<div id="footer">
+</div>
+<!-- //공지사항 , 유관기관, footer-->
+
+ 	<script src="resources/js/tagchoiceview.js"></script>
+    <script src="resources/js/listcommon.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+	    //헤더,풋터 페이지 로드
+	    $(".header").load("/common/header.do");
+	    $("#footer").load("/common/footerNoGa.do?v=20190426001");
+	    
+	    //getLocation();
+	    showPositionNot(0,0);
+	    
+	});
+    function showPosition(x, y) {
+        locationx = x;
+        locationy = y;
+    	//코스 tag가져오기
+    	getMainTag('Tour','main');
+    	//명소 showcase
+    	getTourShowCase('case');
+     }
+	
+    function showPositionNot(x, y) {
+        locationx = x;
+        locationy = y;
+        
+    	//코스 tag가져오기
+    	getMainTag('Tour','main');
+    	//명소 showcase
+    	getTourShowCase('case');
+    }
+	var stagName = '';
+	//이달의 명소가져오기
+	function getTourShowCase(kind) {
+		var pdata =
+        {
+				cmd : 'TOUR_SHOWCASE_VIEW',
+				locationx : locationx+'',
+				locationy : locationy+'',
+				page : 1+'',
+				cnt : 200+'',
+				compid : 'All'
+        }
+    	var obj_st=JSON.stringify(pdata);
+		$.ajax({
+			url: mainurl+'/call',
+			dataType: 'json',
+			type: "POST",
+			data: obj_st,
+			success: function(data) {
+				goTourShowcaseView(data,kind);
+			},
+			complete: function() {
+				//큐레이션 호출
+				getCurationTour();
+			},
+			error: function(xhr, textStatus, errorThrown) {
+			}
+		});
+		
+	}
+	
+	function goTourShowcaseView(data,kind) {
+		uid = data.header.id;
+		setLogintype(uid);
+		
+		var pcshow = '';
+		var moshow = '';
+		var compid = '';
+		var sun = -1;
+		
+		var subHtml = '';
+		
+		if( data.body.subMainList != undefined ) {
+			
+			$.each(data.body.subMainList, function (index, items) {
+				if( items.compType == 'curation' ) {
+				    //<!-- //큐레이션 -->					
+					if( index == 0 ) {
+						subHtml += '<div class="wrap_contView">';
+					} else {
+						subHtml += '<div class="wrap_contView section_line">';
+					}
+					subHtml += '  <h3 class="tit_atc"></h3>';
+					subHtml += '  <span class="date"></span>';
+					subHtml += '  <div class="area_bnDes clfix" id="msmainc'+items.compOrder+'">';
+					subHtml += '  </div>';
+					subHtml += '</div>';
+				  //  <!-- //큐레이션 -->
+				} else {
+				  //  <!-- 명소 -->
+					if( index == 0 ) {
+					    subHtml += '<div class="wrap_contView">';
+					} else {
+					    subHtml += '<div class="wrap_contView section_line">';
+					}
+				    
+				    subHtml += '    <h3 class="tit_atc"></h3>';
+				    subHtml += '    <span class="date"></span>';
+				    subHtml += '    <div class="listBn_msPc m_none" id="msmain'+items.compOrder+'">';	//<!-- pc버전 -->
+				    subHtml += '    </div>';
+				    subHtml += '    <div class="listBn_msM">';		//<!-- mobile 버전 -->';
+				    subHtml += '        <div class="swiper-container">';
+				    subHtml += '             <div class="swiper-wrapper" id="msmainM'+items.compOrder+'">';
+				    subHtml += '            </div>';
+				    subHtml += '        </div>';
+				    subHtml += '    </div>';
+				    subHtml += ' </div>';
+				  //  <!-- //명소 -->
+				}
+			});
+			
+			$("#contentAppend").html(subHtml);
+			
+		}
+		
+		
+		
+		if( data.body.result != undefined ) {
+			$.each(data.body.result, function (index, items) {
+				if( compid != items.compId ) {
+					
+					compid = items.compId;
+					var compId = items.compId;
+					var compOrder = items.compOrder;
+					
+					pcshow = '';
+					moshow = '';
+					
+					pcshow = getTourShowcaseView(data, compId, compOrder, 'pc');
+					moshow = getTourShowcaseView(data, compId, compOrder, 'mo');
+					
+					$('#msmain'+compOrder).html(pcshow);
+					$('#msmainM'+compOrder).html(moshow);
+					mSwiper();
+				} 
+			    
+			});
+			
+		}
+	}
+	function getTourShowcaseView( data, rcompid, sun, rdevice ) {
+		
+		var strHtml = "";
+		var mstrHtml = "";
+		var cnt = 0;
+		var grptitle = '';
+		
+		$.each(data.body.result, function (index, items) {
+			if( rcompid == items.compId ) {
+				var imgalt = items.imgAlt1;
+				if( imgalt == null || imgalt == '' || imgalt == 'null' ) imgalt = items.title;
+	
+				var imgpath = items.imgId;
+				if( cnt == 0 ) {
+					grptitle = items.title1;
+					$('#msmain'+sun).siblings('h3').text(items.title1);
+					$('#msmain'+sun).siblings('span').text(items.subTitle);
+				}
+				if( cnt < 11 ) {
+					//pc
+					if( cnt == 0 || cnt == 6) {
+						strHtml +='<ul class="clfix">';
+					}	
+					
+					strHtml +='<li>';
+					strHtml +='        <img src="'+mainimgurl+imgpath+'" alt="'+imgalt+'">';
+					strHtml +='        <a href="/detail/ms_detail.do?cotid='+items.cotId+'" class="area_dimTxt">';
+					strHtml +='				<div class="table_wrap">';
+					strHtml +='					<div class="table">';
+					strHtml +='						<div class="cell">';
+					strHtml +='            				<strong class="tit_photo">'+items.title+'</strong>';
+					strHtml +='						</div>';
+					strHtml +='					</div>';
+					strHtml +='				</div>';
+					strHtml +='        </a>';
+					strHtml +='</li>';
+					
+					if( cnt == 5 || cnt == 10) {
+						if( cnt == 10 ) {
+							strHtml +='<li class="list_more"><a href="/list/ms_list.do?showcase='+grptitle+'&compid='+items.compId+'">더보기</a></li>';
+						}
+						strHtml +='</ul>';
+					}	
+					
+					//mobile
+		            mstrHtml += '<div class="swiper-slide">';
+		            mstrHtml += '<div class="img">';
+		            mstrHtml += '    <img src="'+mainimgurl+imgpath+'" alt="'+imgalt+'">';
+		            mstrHtml += '    <a href="/detail/ms_detail.do?cotid='+items.cotId+'" class="area_dimTxt">';
+		            mstrHtml += '        <strong class="tit_photo">'+items.title+'</strong>';
+		            mstrHtml += '    </a>';
+		            mstrHtml += '</div>';
+		            mstrHtml += '</div>';
+		
+					if( cnt == 10 ) {
+						mstrHtml += '<div class="swiper-slide">';
+						mstrHtml += '<div class="list_more">';
+						mstrHtml += '   <a href="/list/ms_list.do?showcase='+grptitle+'&compid='+items.compId+'">더보기</a>';
+						mstrHtml += '</div>';
+						mstrHtml += '</div>';
+					}
+				}
+				
+				cnt++;
+			}	
+		});
+		if( rdevice == 'pc') {
+			return strHtml;				
+		} else {
+			return mstrHtml;
+		}
+	}
+	//큐레이션 명소가져오기
+	function getCurationTour() {
+		var pdata =
+        {
+				cmd : 'CURATION_TOUR_LIST_VIEW',
+				compid : 'All'
+        }
+    	var obj_st=JSON.stringify(pdata);
+		$.ajax({
+			url: mainurl+'/call',
+			dataType: 'json',
+			type: "POST",
+			data: obj_st,
+			success: function(data) {
+				goCurationTourView(data);
+			},
+			complete: function() {
+			},
+			error: function(xhr, textStatus, errorThrown) {
+			}
+		});
+		
+	}
+	
+	function goCurationTourView(data) {
+		
+		var strHtml = "";
+		var cnt = 0;
+		var compOrder;
+		if( data.body.result != undefined ) {
+			cnt = data.body.result.length;
+			$.each(data.body.result, function (index, items) {
+				
+				if( compOrder != items.compOrder ) {
+					compOrder = items.compOrder;
+					$('#msmainc'+compOrder).siblings('h3').text(items.title1);
+					$('#msmainc'+compOrder).siblings('span').text(items.subTitle);
+					
+					var curationHtml = goCurationTourViewDetail(data, compOrder);
+					
+					$('#msmainc'+compOrder).html(curationHtml);
+					
+				}	
+			});
+			
+		}
+	}
+	function goCurationTourViewDetail(data, compOrder) {
+		
+		var strHtml = "";
+		var cnt = 0;
+		var ccount = 0;
+		var compOrder;
+		$.each(data.body.result, function (index, items) {
+			
+			if( compOrder == items.compOrder ) {
+				if( ccount == 0 || ccount == (cnt/2) ) {
+					strHtml +='<ul>';
+				}
+				
+				var headtitle = '';
+				var color = '';
+				if( items.displayHeaderTitle != undefined && items.displayHeaderTitle != '' ) {
+					headtitle = items.displayHeaderTitle;
+					color = "color:#"+items.haederColor;
+				} else {
+					headtitle = getAreaName(items.areaCode);
+				}
+	
+				if( items.cotId == null || items.cotId == 'null' ) {
+					strHtml += '<li><strong style="'+color+'">'+headtitle+'</strong><a href="javascript:" onclick="goCurationDetail(\''+items.homepage+'\');"><span>'+items.title+'</span></a></li>';
+				} else {
+					strHtml += '<li><strong>'+headtitle+'</strong><a href="/detail/ms_detail.do?cotid='+items.cotId+'"><span>'+items.title+'</span></a></li>';				
+				}
+	
+				
+				if( ccount == (cnt/2)-1 || ccount == cnt-1) {
+					strHtml +='</ul>';
+				}
+				
+				ccount++;
+				cnt++;
+				
+			}			
+		});
+		
+		return strHtml;
+	}
+	
+	function goCurationDetail(rurl) {
+		if( appYn == 'Y' ) {
+			location.href = "opentab://"+rurl; 
+		} else {
+			window.open(rurl);			
+		}
+	}
+	//지역pc 클릭시
+	$(document).on("click",".area_msListPc ul li",function(){  
+		var areacode = $(this).attr('id');
+		
+		$(".area_msListPc ul li").each(function( index ) {
+			$( this ).removeClass('on');
+			if( $( this ).attr('id') == areacode ) {
+				$( this ).addClass('on');
+			}
+		});
+		
+		location.href = '/list/ms_list.do?areacode='+areacode;
+	});	
+	//지역mobile 선택시
+	$("select").change(function () { 
+		var areacode = ""; 
+		$("select option:selected").each(function () { 
+			areacode = $(this).val(); 
+		}); 
+		
+		location.href = '/list/ms_list.do?areacode='+areacode; 
+	}) 
+	$(document).on("click","#submainSearch",function(){ 
+		goChkSearch();
+	});
+	function goChkSearch() {
+		if( $('#submainInp').val() == '' ) {
+			alert('검색어를 입력하세요.');
+			return;
+		} else {
+			location.href = '/search/search_list.do?keyword='+$('#submainInp').val()+'&tab=4'+'&temp=';
+		}
+	}
+	
+	function subEnterkey() {
+		if (window.event.keyCode == 13) {
+            // 엔터키가 눌렸을 때 실행할 내용
+            goChkSearch();
+       }
+	}
+</script>
+
+
+    
+<script>
+	function mSwiper() {
+		   var swiper = new Swiper('.swiper-container', {
+		       freeMode:true,
+		       observer: true,
+		       slidesPerView: 'auto',
+		       spaceBetween: 10,
+		   });
+	}
+</script>
+
+</body>
+</html>

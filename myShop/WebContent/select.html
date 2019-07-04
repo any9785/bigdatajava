@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css.css"/>
+</head>
+<body>
+	<input type="button" value="등록"  class="btn btn-danger" onclick="location.href='insert.html'"></button>
+	<input type="button" value="삭제" class="btn btn-warning" onclick="location.href='delete.jsp'"></button>
+	<input type="button" value="수정" class="btn btn-success" onclick="location.href='update.html'"></button>
+	<input type="button" value="검색" class="btn btn-info" onclick="location.href='select.html'"></button>
+	<form action="select.jsp">
+	<div class="select">	
+		<div class="select1">
+		검색할 아이디 입력 : <input type="text" name="id">
+		</div>
+	<button type="submit">검색</button>
+	</div>
+</form>
+</body>
+</html>

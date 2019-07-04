@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.insert{
+	font-style: italic;
+	color: aqua;
+	background-color: yellow;
+	text-align: center;
+}
+.in1{
+	text-align: center;
+	background-color: pink;
+}
+.in2{
+	margin-left: 480px;
+}
+.text{
+	background-color: aliceblue;
+	border: 3px solid #999999;
+}
+.remove{
+	font-size: 4ex;
+	font-weight: 200;
+}
+.select{
+	background-color: pink;
+	height: 3cm;
+	width: 5cm;
+	text-align: center;
+}
+.select1{
+	font-weight: 1000;
+}
